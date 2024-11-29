@@ -14,7 +14,7 @@ public class Clima {
             this.setLlueve(llueve);
             this.setNublado(nublado);
         } finally {
-            
+
         }
     }
 
@@ -30,7 +30,9 @@ public class Clima {
         return humedad;
     }
 
-    public void setHumedad(int humedad) {
+    public void setHumedad(int humedad) throws HumedadNegativaException{
+        if(humedad < 0)
+            throw new HumedadNegativaException();
         this.humedad = humedad;
     }
 

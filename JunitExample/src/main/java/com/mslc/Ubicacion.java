@@ -1,6 +1,6 @@
 package com.mslc;
 
-public class Ubicacion {
+public class Ubicacion extends Exception{
 
     private boolean restricciones;
     private int aforo;
@@ -28,11 +28,13 @@ public class Ubicacion {
         this.restricciones = restricciones;
     }
 
-    public int getAforo() {
+    public int getAforo(){
         return aforo;
     }
 
-    public void setAforo(int aforo) {
+    public void setAforo(int aforo) throws AforoNegativoException{
+        if (this.aforo < 0)
+            throw new AforoNegativoException();
         this.aforo = aforo;
     }
 
@@ -40,7 +42,9 @@ public class Ubicacion {
         return aforoMaximo;
     }
 
-    public void setAforoMaximo(int aforoMaximo) {
+    public void setAforoMaximo(int aforoMaximo) throws AforoNegativoException{
+        if(aforoMaximo < 0)
+            throw new AforoNegativoException();
         this.aforoMaximo = aforoMaximo;
     }
 

@@ -7,6 +7,9 @@ public class main {
 
         Persona persona = new Persona (new ArrayList<String>(), false, true, true);
         Clima clima = new Clima(15,15,false,false);
+        Ubicacion playa = new Ubicacion(false, 100, 1000);
+        Ubicacion esqui = new Ubicacion(false, 100, 1000);
+        Ubicacion senderismo = new Ubicacion(false, 100, 1000);
 
         if(!persona.sintomas() && persona.isContactoCorona() && !persona.isPasadoCorona() && !persona.isVacunaCorona()){
             System.out.println("No puede realizar ninguna actividad");

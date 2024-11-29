@@ -6,12 +6,14 @@ public class Ubicacion {
     private int aforo;
     private int aforoMaximo;
 
-   
-
     public Ubicacion(boolean restricciones, int aforo, int aforoMaximo) {
-        this.setRestricciones(restricciones);
-        this.setAforo(aforoMaximo);
-        this.setAforoMaximo(aforoMaximo);
+        try{
+            this.setRestricciones(restricciones);
+            this.setAforo(aforoMaximo);
+            this.setAforoMaximo(aforoMaximo);
+        } finally {
+
+        }
     }
 
     public boolean aforoCompleto() {

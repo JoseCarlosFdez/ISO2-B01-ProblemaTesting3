@@ -20,12 +20,12 @@ private boolean vacunaCorona;
         }
     }
 
-    public boolean todoCorrecto(){
-        return !this.sintomas() && this.isContactoCorona() && !this.isPasadoCorona() && !this.isVacunaCorona();
+    public boolean infectadoCorona(){
+        return this.haySintomas() || this.isContactoCorona() || !this.isPasadoCorona() || !this.isVacunaCorona();
     }
 
-    public boolean sintomas(){
-        return this.sintomas.isEmpty();
+    public boolean haySintomas(){
+        return this.sintomas.size() > 0;
     }
 
     public ArrayList getSintomas() {

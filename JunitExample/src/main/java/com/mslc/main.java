@@ -43,8 +43,12 @@ public class main {
             if(cañas())
                 recomen = "irse de cañas";
             
-            if(bañoPiscina())
-                recomen = "irse a la playa o a la piscina.";
+            if(bañoPiscina()){
+                recomen = "irse a la playa";
+                if(piscina.aforoCompleto())
+                    recomen += " o a la piscina";
+            }
+                
         }
 
         recomendacion(recomen);
@@ -85,7 +89,7 @@ public class main {
     }
 
     public static boolean temperaturaFresca(){
-        return clima.getTemperatura() > 0 && clima.getHumedad() < 15;
+        return clima.getTemperatura() > 0 && clima.getTemperatura() < 15;
     }
 
     public static boolean temperaturaTemplada(){

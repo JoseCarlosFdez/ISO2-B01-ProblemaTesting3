@@ -45,10 +45,9 @@ public class main {
             
             if(bañoPiscina()){
                 recomen = "irse a la playa";
-                if(piscina.aforoCompleto())
+                if(!piscina.aforoCompleto())
                     recomen += " o a la piscina";
             }
-                
         }
 
         recomendacion(recomen);
@@ -81,7 +80,7 @@ public class main {
 
     //Si la temperatura meteorológica es mayor que 30 grados, y no llueve, la recomendación es irse a la playa o a la piscina. La piscina no puede superar el aforo permitido.
     public static boolean bañoPiscina(){
-        return clima.getTemperatura() > 30 && !clima.isLlueve() && !piscina.aforoCompleto();
+        return clima.getTemperatura() > 30 && !clima.isLlueve();
     }
 
     public static boolean temperaturaFria(){
@@ -89,7 +88,7 @@ public class main {
     }
 
     public static boolean temperaturaFresca(){
-        return clima.getTemperatura() > 0 && clima.getTemperatura() < 15;
+        return clima.getTemperatura() > 0 && clima.getHumedad() < 15;
     }
 
     public static boolean temperaturaTemplada(){
